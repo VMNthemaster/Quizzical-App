@@ -15,7 +15,7 @@ function App() {
   const [showStartButton, setShowStartButton] = useState(true)
 
   const [questions, setQuestions] = useState([])
-  console.log(questions)
+  // console.log(questions)
 
   const [isLoading, setIsLoading] = useState(false)
 
@@ -27,8 +27,8 @@ function App() {
 
   const [numOfCorrectAnswers, setNumOfCorrectAnswers] = useState(0)
 
-  console.log(questions)
-  console.log(isShowAnswersClicked)
+  // console.log(questions)
+  // console.log(isShowAnswersClicked)
 
   const handleStart = async () => {
     let newQuestions = []
@@ -49,7 +49,7 @@ function App() {
 
         }
       })
-      console.log(randomOrderAnswersObject)
+      // console.log(randomOrderAnswersObject)
       shuffle(randomOrderAnswersObject)
       // console.log(randomOrderAnswers)
       resData[i].randomOrderAnswers = randomOrderAnswersObject
@@ -61,7 +61,7 @@ function App() {
 
   }
 
-  console.log(questions)
+  // console.log(questions)
 
   const holdAnswer = (question) => {
     const holdAnswerArray = questions.filter((item) => {
@@ -83,12 +83,12 @@ function App() {
       const isClickedArray = questions[i].randomOrderAnswers.map((item) => {
         return item.isClicked
       })
-      console.log(isClickedArray)
+      // console.log(isClickedArray)
       if (isClickedArray[0] || isClickedArray[1] || isClickedArray[2] || isClickedArray[3]) {
         num = num + 1
       }
     }
-    console.log(num)
+    // console.log(num)
     setNumOfChecked(num)
     setIsShowAnswersClicked(true)
     
@@ -113,7 +113,7 @@ function App() {
       newArray.push(newArrayElement)
     }
 
-    console.log(newArray)
+    // console.log(newArray)
     // run filter function to remove all null values
 
     let filteredNewArray = []
@@ -128,7 +128,7 @@ function App() {
       }
     }
 
-    console.log(filteredNewArray)   // this is correct
+    // console.log(filteredNewArray)   // this is correct
     setQuestions(filteredNewArray)
 
     let num = 0
@@ -138,7 +138,7 @@ function App() {
         num = num + 1
       }
     }
-    console.log(num)    // this is correct
+    // console.log(num)    // this is correct
     setNumOfCorrectAnswers(num)
   }
 
